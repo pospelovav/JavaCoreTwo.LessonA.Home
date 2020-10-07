@@ -2,6 +2,8 @@ package ru.geekbrains.java_two.lesson_a.home;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.TimerTask;
+import java.util.Timer;
 
 public class MainCircles extends JFrame {
     private static final int POS_X = 400;
@@ -9,7 +11,8 @@ public class MainCircles extends JFrame {
     private static final int WINDOW_WIDTH = 800;
     private static final int WINDOW_HEIGHT = 600;
 
-    Sprite[] sprites = new Sprite[10];
+
+    Sprite[] sprites = new Sprite[5];
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -18,6 +21,9 @@ public class MainCircles extends JFrame {
                 new MainCircles();
             }
         });
+
+
+
     }
 
     private MainCircles() {
@@ -39,6 +45,7 @@ public class MainCircles extends JFrame {
     public void onDrawFrame(GameCanvas canvas, Graphics g, float deltaTime) {
         update(canvas, deltaTime);
         render(canvas, g);
+        canvas.setBackground(Background.color);
     }
 
     private void update(GameCanvas canvas, float deltaTime) {

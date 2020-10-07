@@ -3,6 +3,7 @@ package ru.geekbrains.java_two.lesson_a.home;
 import java.awt.*;
 
 public class Ball extends Sprite {
+    //private final Color color;
     private final Color color;
     private float vX;
     private float vY;
@@ -10,6 +11,7 @@ public class Ball extends Sprite {
     Ball() {
         halfHeight = 20 + (float) (Math.random() * 50f);
         halfWidth = halfHeight;
+
         color = new Color(
                 (int) (Math.random() * 255), // R
                 (int) (Math.random() * 255), // G
@@ -26,18 +28,22 @@ public class Ball extends Sprite {
         if (getLeft() < canvas.getLeft()) {
             setLeft(canvas.getLeft());
             vX = -vX;
+            //Background.ChangeColor();  //вызов статического метода класса Background смены цвета канвы
         }
         if (getRight() > canvas.getRight()) {
             setRight(canvas.getRight());
             vX = -vX;
+            //Background.ChangeColor();   //вызов статического метода класса Background смены цвета канвы
         }
         if (getTop() < canvas.getTop()) {
             setTop(canvas.getTop());
             vY = -vY;
+            //Background.ChangeColor();   //вызов статического метода класса Background смены цвета канвы
         }
         if (getBottom() > canvas.getBottom()) {
             setBottom(canvas.getBottom());
             vY = -vY;
+           //Background.ChangeColor();   //вызов статического метода класса Background смены цвета канвы
         }
     }
 
